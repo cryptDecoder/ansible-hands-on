@@ -9,6 +9,7 @@
         07:48:13 up  3:49,  1 user,  load average: 2.03, 2.17, 2.14
 * collect and display the discovered for the localhost
   $ ansible localhost -m setup
+<<<<<<< HEAD
 
 ## Inventory
 - Inventory is a collection of hosts (nodes) against which can work with.
@@ -39,3 +40,5 @@
 ## Variable in Ansible
     * Variable:- 
         Ansible can work with metadata from various sources and manage their context in the form of variables.
+=======
+>>>>>>> 1de30e2df730b5766a6066a9fb6fb01feb17afd9
