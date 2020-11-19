@@ -37,7 +37,7 @@
      * Removing httpd
         ansible servers -i hosts -u dark -m apt -a "name=httpd state=absent" -b --ask-become-pass
     
-    ## Introduction to Playbooks (and demonstration)
+    # Introduction to Playbooks (and demonstration)
     ## Variable in Ansible
      - Variable:- 
         Ansible can work with metadata from various sources and manage their context in the form of variables.
@@ -49,5 +49,8 @@
         templates: Render a config file from a template
         get_url: Fetch an archive file from a URL
         git: Clone the source code repository
+    ## Handler Tasks
+        * Handler are special tasks that run at the end of a play if notfied by another task
 
+        if a configuration files gets changed notify a service restart task it needs to run.
 
