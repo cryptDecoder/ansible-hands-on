@@ -1,0 +1,22 @@
+---
+- hosts: kali
+  become: true
+  become_user: root
+
+  tasks:
+    - name: add Cacher dir
+      file:
+        path: /opt/cache
+        state: directory
+
+    - name: Install Nginx server
+      apt:
+        name: nginx
+        state: latest
+      notify: restart nginx
+
+  handlers:
+    - name: restart nginx
+      service:
+        name: nginx
+        state: restarted

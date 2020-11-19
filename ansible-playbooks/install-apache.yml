@@ -1,0 +1,25 @@
+---
+- name: install and start apache on redhat servers
+  hosts: kali
+  remote_user: root
+  become: yes
+
+  tasks:
+    - name: install epel repo
+      yum: name=epel-release state=present
+    - name: install python bindings for linux
+      yum: name={{item}} state=present
+      with_items:
+        - libselinux-python
+        - libsemanage-python
+
+    - name: Test to see if seLinux is running
+      command: getenforce
+      register: setstatus
+      changed_when: false
+
+    - name: Install appache2
+      yum: name=httpd state=present
+
+    - name: Start apache
+      service: name=httpd state=started enabled=yes
