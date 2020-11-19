@@ -36,9 +36,18 @@
         ansible servers -i hosts -u dark -m apt -a "name=httpd state=present" -b --ask-become-pass
      * Removing httpd
         ansible servers -i hosts -u dark -m apt -a "name=httpd state=absent" -b --ask-become-pass
-
-## Variable in Ansible
-    * Variable:- 
+    
+    ## Introduction to Playbooks (and demonstration)
+    ## Variable in Ansible
+     - Variable:- 
         Ansible can work with metadata from various sources and manage their context in the form of variables.
-=======
->>>>>>> 1de30e2df730b5766a6066a9fb6fb01feb17afd9
+
+    * Variables Example:-
+        file: A directory should exit
+        yum: A package should be installed
+        service: A service should be running
+        templates: Render a config file from a template
+        get_url: Fetch an archive file from a URL
+        git: Clone the source code repository
+
+

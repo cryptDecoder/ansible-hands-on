@@ -1,0 +1,13 @@
+---
+- hosts: kali
+  become: true
+  become_user: root
+  tasks:
+    - name: Add cache Dir
+      file:
+        path: /opt/cache
+        state: directory
+    - name: Install the Git on the system
+      apt:
+        name: git
+        state: latest
