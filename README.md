@@ -1,6 +1,6 @@
 # ansible-hands-on
 ## Ad-Hoc Commands (and demonstration)
-* Chech all my inventory hosts are ready to be managed by ansible
+* Check all my inventory hosts are ready to be managed by ansible
     $ ansible all -m ping
 * Run the uptime command on all hosts in servers group
     $ ansible servers -m command -a "uptime"
